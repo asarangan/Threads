@@ -14,5 +14,6 @@ class MyRunnable: Runnable {
             }
             //myTask.retcode = 2
             println("myTag: Thread has ended")
+            myTask.setImageDecodeThread(Thread.currentThread())
         }
     }

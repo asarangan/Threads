@@ -7,7 +7,7 @@ import android.os.Message
 object MyManager {
     private val handler: Handler = object : Handler(Looper.getMainLooper()) {
         override fun handleMessage(inputMessage: Message) {
-            val myTask = <MyTask> inputMessage.obj
+            val myTask = inputMessage.obj as MyTask
         }
     }
 }
