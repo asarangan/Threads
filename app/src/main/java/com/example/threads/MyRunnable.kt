@@ -1,19 +1,19 @@
 package com.example.threads
 
 import android.os.SystemClock
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MyRunnable: Runnable {
 
         //private val rtVals:RtVals
         override fun run() {
             println("myTag: Thread is Running")
-            for (i in 1..10) {
-                SystemClock.sleep(500)
-                println("myTag: Number is = "+i)
-                //rtVals.code = 1
+            var i=0;
+            while(i<4000){
+                i++
             }
-            //myTask.retcode = 2
-            println("myTag: Thread has ended")
-            myTask.setImageDecodeThread(Thread.currentThread())
+            MainActivity.runOnUiThread(java.lang.Runnable {
+                msg.text = "Updated from other Thread"
+            }
         }
     }
